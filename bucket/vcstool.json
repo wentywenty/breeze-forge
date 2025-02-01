@@ -4,7 +4,7 @@
     "homepage": "https://github.com/MaxandreOgeret/vcstool2",
     "license": "Apache-2.0",
     "url": "https://github.com/MaxandreOgeret/vcstool2/archive/refs/tags/0.4.5.zip",
-    "hash": "sha256:e67a64167bad52ec3c7d7121e3c2bb33656c2b9bd12f8a05cab657c026367cb0",
+    "hash": "sha256:6e925cdfd5136a2846047f6fe9da96dbba499038881247b38e4ee3af86e219a9",
     "extract_dir": "vcstool2-0.4.5",
     "pre_install": "Set-Content -Value '@call python3 \"%~dp0\\vcs.py\" %*' -Path \"$dir\\vcs.cmd\"",
     "bin": [
