@@ -1,0 +1,24 @@
+{
+    "version": "1.32.0",
+    "description": "Cross-platform C++ library for ASynchronous network I/O (mingw-w64)",
+    "homepage": "https://think-async.com/Asio/",
+    "license": {
+        "identifier": "Custom-License",
+        "url": "https://www.boost.org/LICENSE_1_0.txt"
+    },
+    "url": [
+        "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-asio-1.32.0-1-any.pkg.tar.zst"
+    ],
+    "hash": [
+        "sha256:9c9d06c35344c6ae480bd6819ff474e91e65c4c59776d19dffa4bedd39055b55"
+    ],
+    "checkver": {
+        "github": "https://packages.msys2.org/packages/mingw-w64-x86_64-asio",
+        "regex": "asio-([\\d.]+)-\\d+-any\\.pkg\\.tar\\.zst"
+    },
+    "autoupdate": {
+        "url": [
+            "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-asio-$version-1-any.pkg.tar.zst"
+        ]
+    }
+}
