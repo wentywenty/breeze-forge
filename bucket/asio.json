@@ -1,5 +1,5 @@
 {
-    "version": "1.32.0",
+    "version": "1.32.0-1",
     "description": "Cross-platform C++ library for ASynchronous network I/O (mingw-w64)",
     "homepage": "https://think-async.com/Asio/",
     "license": {
@@ -18,7 +18,7 @@
     },
     "autoupdate": {
         "url": [
-            "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-asio-$version-1-any.pkg.tar.zst"
+            "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-asio-$version-any.pkg.tar.zst"
         ]
     }
 }
