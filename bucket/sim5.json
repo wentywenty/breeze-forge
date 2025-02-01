@@ -1,0 +1,49 @@
+{
+  "version": "25.1.18",
+  "description": "SimuroSot5",
+  "homepage": "https://github.com/wentywenty/SIM5",
+  "license": {
+    "identifier": "Custom-License",
+    "url": "https://www.neu.edu.cn/"
+  },
+  "pre_install": "./script/pre_install.ps1",
+  "url": "file:///D:/github/SIM5/SIM5.zip",
+  "hash": "SHA256:1aae50f1ccb741f2f10d60755be77ae70883b8a6b086d3b4ada9383908e54ef0",
+  "psmodule": {
+    "name": "script"
+  },
+  "shortcuts": [
+    [
+      "C:/Strategy/SimuroSot5.exe",
+      "SimuroSot5"
+    ],
+    [
+      "C:/Strategy/WorldModel.exe",
+      "WorldModel"
+    ],
+    [
+      "C:/Strategy/SimuroSot5.exe",
+      "SimuroSot5",
+      "Desktop"
+    ]
+  ],
+  "depends": [
+    "python",
+    "git"
+  ],
+  "installer": {
+    "script": [
+      "powershell -ExecutionPolicy Bypass -File ./script/install.ps1"
+    ]
+  },
+  "uninstaller": {
+    "script": [
+      "powershell -ExecutionPolicy Bypass -File ./script/uninstall.ps1"
+    ]
+  },
+  "persist": [
+    "Strategy/Strategy4Blue.dll",
+    "Strategy/Strategy4Yellow.dll"
+  ],
+  "notes": "This is a custom package"
+}

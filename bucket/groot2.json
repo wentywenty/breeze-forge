@@ -1,0 +1,27 @@
+{
+    "version": "1.6.1",
+    "description": "The most advanced IDE to create and debug Behavior Trees.",
+    "homepage": "https://www.behaviortree.dev/groot/",
+    "license": {
+        "identifier": "Custom-License",
+        "url": "file:///./license.txt"
+    },
+    "url": "https://s3.us-west-1.amazonaws.com/download.behaviortree.dev/groot2_windows_installer/Groot2-v1.6.1-windows-installer.exe",
+    "hash": "sha256:e26cdb59050751785c9451c2d03a4b164d85e7203240e8c1ab84872fdaa80354",
+    "bin": [
+        "bin\\groot.exe",
+        "maintenancetool.exe"
+    ],
+    "env_add_path": "bin",
+    "installer": {
+        "file": "Groot2-v1.6.1-windows-installer.exe",
+        "script": [
+            "echo Running installer...",
+            "start /wait Groot2-v1.6.1-windows-installer.exe /S > install.log 2>&1",
+            "echo Installer finished with exit code %ERRORLEVEL%",
+            "type install.log"
+        ],
+        "args": [],
+        "keep": "true"
+    }
+}

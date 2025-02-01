@@ -1,0 +1,28 @@
+{
+    "version": "v2.51",
+    "description": "A tool for managing multiple Git repositories.",
+    "homepage": "https://gerrit.googlesource.com/git-repo",
+    "license": {
+        "identifier": "Apache-2.0"
+    },
+    "url": "https://raw.githubusercontent.com/esrlabs/git-repo/stable/repo",
+    "hash": "sha256:df7fd0c93673c1fa82ca9f4139b51ba3520d750aa3cefdd6255dea2a36c76da7",
+    "pre_install": "Set-Content -Value '@call python2 \"%~dp0\\repo\" %*' -Path \"$dir\\repo.cmd\"",
+    "env_add_path": "bin",
+    "bin": [
+        "repo.cmd"
+    ],
+    "depends": [
+        "git",
+        "python",
+        "gnupg",
+        "python27"
+    ],
+    "checkver": {
+        "url": "https://raw.githubusercontent.com/esrlabs/git-repo/stable",
+        "regex": "400: Invalid request*"
+    },
+    "autoupdate": {
+        "url": "https://raw.githubusercontent.com/esrlabs/git-repo/stable/repo"
+    }
+}
