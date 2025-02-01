@@ -1,42 +1,72 @@
-# Scoop Bucket Template
+# Breeze Forge Bucket
 
-<!-- Uncomment the following line after replacing placeholders -->
-<!-- [![Tests](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml) [![Excavator](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml) -->
+## 简介
 
-Template bucket for [Scoop](https://scoop.sh), the Windows command-line installer.
+Breeze Forge 是一个专注于开发工具和库的 Scoop bucket。我们提供了多个常用的开发工具和库的安装包，让 Windows 开发者能够更方便地管理和使用这些工具。
 
-## How do I use this template?
+## 当前收录的软件
 
-1. Generate your own copy of this repository with the "Use this template"
-   button.
-2. Allow all GitHub Actions:
-   - Navigate to `Settings` - `Actions` - `General` - `Actions permissions`.
-   - Select `Allow all actions and reusable workflows`.
-   - Then `Save`.
-3. Allow writing to the repository from within GitHub Actions:
-   - Navigate to `Settings` - `Actions` - `General` - `Workflow permissions`.
-   - Select `Read and write permissions`.
-   - Then `Save`.
-4. Document the bucket in `README.md`.
-5. Replace the placeholder repository string in `bin/auto-pr.ps1`.
-6. Create new manifests by copying `bucket/app-name.json.template` to
-   `bucket/<app-name>.json`.
-7. Commit and push changes.
-8. If you'd like your bucket to be indexed on `https://scoop.sh`, add the
-   topic `scoop-bucket` to your repository.
+### 开发工具
 
-## How do I install these manifests?
+- **nRF Util** (v7.12.0) - Nordic 产品统一命令行工具
+- **Repo** (v2.51) - Google 开发的多 Git 仓库管理工具
+- **Chroot** (v2.0) - Linux chroot 工具的 Windows 移植版
+- **DTC** (v1.7.2) - 设备树编译器
+- **Gperf** (v3.1) - GNU 完美哈希生成器
 
-After manifests have been committed and pushed, run the following:
+### 开发库
 
-```pwsh
-scoop bucket add <bucketname> https://github.com/<username>/<bucketname>
-scoop install <bucketname>/<manifestname>
+- **Asio** (v1.32.0) - 跨平台 C++ 异步 I/O 库
+- **Boost** (v1.87.0) - C++ 通用开发库
+- **TinyXML2** (v10.0.0) - 轻量级 C++ XML 解析器
+- **Bullet** (v3.25) - 实时物理引擎库 [开发中]
+- **Eigen** (待添加) - C++ 模板矩阵运算库 [计划中]
+
+### 专业软件
+
+- **SimuroSot5** (v25.1.18) - 机器人足球仿真平台
+
+## 使用方法
+
+1. 首先添加我们的 bucket：
+
+```powershell
+scoop bucket add breeze-forge https://github.com/breeze-forge/breeze-bucket
 ```
 
-## How do I contribute new manifests?
+2. 然后即可安装软件：
 
-To make a new manifest contribution, please read the [Contributing
-Guide](https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md)
-and [App Manifests](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
-wiki page.
+```powershell
+scoop install breeze-forge/<package-name>
+```
+
+## 特性
+
+- 📦 精选的开发工具和库
+- 🔄 自动更新检查
+- ⚡ 快速安装和卸载
+- 🛠️ 完整的依赖管理
+- 💻 Windows 优化支持
+
+## 贡献指南
+
+欢迎提交 Pull Request 来帮助改进这个 bucket。在提交之前，请确保：
+
+1. 遵循 [Scoop 的清单指南](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifest-Autoupdate)
+2. 测试安装和卸载过程
+3. 提供准确的版本信息和哈希值
+
+## 许可证
+
+本项目采用 MIT 许可证。详见 [LICENSE](LICENSE) 文件。
+
+## 联系我们
+
+如果您有任何问题或建议，请：
+
+1. [提交 Issue](https://github.com/breeze-forge/breeze-bucket/issues)
+2. [发起 Pull Request](https://github.com/breeze-forge/breeze-bucket/pulls)
+
+## 鸣谢
+
+感谢所有为此项目做出贡献的开发者！

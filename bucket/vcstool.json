@@ -1,0 +1,26 @@
+{
+    "version": "0.4.5",
+    "description": "A command line tool to invoke VCS commands on multiple repositories (Python 3 version)",
+    "homepage": "https://github.com/MaxandreOgeret/vcstool2",
+    "license": "Apache-2.0",
+    "url": "https://github.com/MaxandreOgeret/vcstool2/archive/refs/tags/0.4.5.zip",
+    "hash": "sha256:e67a64167bad52ec3c7d7121e3c2bb33656c2b9bd12f8a05cab657c026367cb0",
+    "extract_dir": "vcstool2-0.4.5",
+    "pre_install": "Set-Content -Value '@call python3 \"%~dp0\\vcs.py\" %*' -Path \"$dir\\vcs.cmd\"",
+    "env_add_path": "bin",
+    "bin": [
+        "vcs.cmd"
+    ],
+    "depends": [
+        "git",
+        "python3"
+    ],
+    "checkver": {
+        "github": "https://github.com/MaxandreOgeret/vcstool2",
+        "regex": "tag/v([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/MaxandreOgeret/vcstool2/archive/refs/tags/v$version.zip",
+        "extract_dir": "vcstool2-$version"
+    }
+}
