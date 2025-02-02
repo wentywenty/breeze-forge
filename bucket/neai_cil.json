@@ -1,0 +1,14 @@
+{
+    "version": "latest",
+    "description": "STM32 AI tools suite provides optimized C-code generation for AI models deployment on STM32 MCUs.",
+    "homepage": "https://www.st.com/en/embedded-software/x-cube-ai.html",
+    "license": {
+        "identifier": "Custom-License"
+    },
+    "url": "https://stm32ai-prod-api.azure-api.net/marketplace/v1/release/neai-studio/latest?platform=win64&channel=cli-stable&email=",
+    "bin": "neai_cil.exe",
+    "env_add_path": "bin",
+    "env_set": {
+        "STM32AI_HOME": "$persist_dir"
+    }
+}
