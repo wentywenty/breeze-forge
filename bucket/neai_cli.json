@@ -6,7 +6,7 @@
         "identifier": "Custom-License"
     },
     "url": "https://stm32ai-prod-api.azure-api.net/marketplace/v1/release/neai-studio/latest?platform=win64&channel=cli-stable&email=",
-    "hash": "sha256:a70da8af68b6bf32c7d2c1448c86cb3f3b6437e6e551991cf9d912a528bf38a7",
+    "hash": "sha256:1a31d664ec93287abf5e6d3bd79617aabbc4be8ddd7e6b9ef78f3fa95c51888f",
     "bin": [
         "neai.exe",
         "neai_cli.exe"
