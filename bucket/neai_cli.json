@@ -8,11 +8,9 @@
     "url": "https://stm32ai-prod-api.azure-api.net/marketplace/v1/release/neai-studio/latest?platform=win64&channel=cli-stable&email=",
     "hash": "sha256:1a31d664ec93287abf5e6d3bd79617aabbc4be8ddd7e6b9ef78f3fa95c51888f",
     "bin": [
+        "neai_cli.exe",
         "neai.exe",
-        "neai_cli.exe"
-    ],
-    "env_add_path": "bin",
-    "env_set": {
-        "STM32AI_HOME": "$persist_dir"
-    }
+        "neai_api_app.exe",
+        "meai_api.exe"
+    ]
 }
