@@ -7,6 +7,15 @@
     },
     "url": "https://stm32ai-prod-api.azure-api.net/marketplace/v1/release/neai-studio/latest?platform=win64&channel=cli-stable&email=&filename=neai_cli_win.zip",
     "hash": "sha256:1a31d664ec93287abf5e6d3bd79617aabbc4be8ddd7e6b9ef78f3fa95c51888f",
+    "pre_install": [
+        "Rename-Item \"$dir\\*\" \"$dir\\download.zip\"",
+        "$tmp = \"$dir\\tmp\"",
+        "New-Item -ItemType Directory -Force -Path \"$tmp\"",
+        "Expand-Archive -Path \"$dir\\download.zip\" -DestinationPath \"$tmp\" -Force",
+        "Move-Item \"$tmp\\*\\*\" \"$dir\" -Force",
+        "Remove-Item \"$dir\\download.zip\"",
+        "Remove-Item \"$tmp\" -Recurse -Force"
+    ],
     "extract_dir": "neai_cli",
     "bin": [
         [
