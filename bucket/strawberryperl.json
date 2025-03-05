@@ -1,0 +1,48 @@
+{
+    "version": "5.40.0.1",
+    "description": "Strawberry Perl is a perl environment for Microsoft Windows",
+    "homepage": "http://strawberryperl.com",
+    "license": "GPL-2.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/StrawberryPerl/Perl-Dist-Strawberry/releases/download/SP_54001_64bit_UCRT/strawberry-perl-5.40.0.1-64bit.msi",
+            "hash": "29f72c3403d316b5ec48204546a7aad6b5567ff9a346cacd94af81fe0ffdc83e"
+        }
+    },
+    "extract_dir": "Strawberry",
+    "installer": {
+        "script": [
+            "# 使用 msiexec 安装 MSI 文件",
+            "Start-Process -Wait msiexec -ArgumentList \"/i `\"$dir\\$fname`\" /qn /norestart\" -Verb RunAs"
+        ]
+    },
+    "bin": [
+        "perl\\bin\\perl.exe",
+        "perl\\bin\\perldoc.bat",
+        "perl\\bin\\ppm.bat"
+    ],
+    "env_add_path": [
+        "perl\\bin",
+        "perl\\site\\bin",
+        "c\\bin"
+    ],
+    "env_set": {
+        "PERL_JSON_BACKEND": "JSON::PP",
+        "PERL_YAML_BACKEND": "YAML::PP"
+    },
+    "checkver": {
+        "url": "http://strawberryperl.com/releases.html",
+        "regex": "strawberry-perl-([\\d.]+)-64bit\\.msi"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/StrawberryPerl/Perl-Dist-Strawberry/releases/download/SP_$cleanVersionNoDotsUCRT/strawberry-perl-$version-64bit.msi",
+                "hash": {
+                    "url": "http://strawberryperl.com/download/$version/strawberry-perl-$version-64bit.msi.sha256.txt",
+                    "regex": "$sha256"
+                }
+            }
+        }
+    }
+}

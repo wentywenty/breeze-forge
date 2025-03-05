@@ -1,0 +1,28 @@
+{
+    "version": "4.10.3.26725",
+    "description": "GD-Link Programmer for GigaDevice MCU programming and debugging",
+    "homepage": "https://www.gd32mcu.com/cn/download",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.gd32mcu.com/"
+    },
+    "url": "file:///D:\\downland\\GD-Link_Programmer_v4.10.3.26725.7z",
+    "hash": "md5:eb570502d1832900f8b874487be75b75",
+    "extract_dir": "GD-Link Programmer",
+    "bin": [
+        [
+            "GD-Link Programmer.exe",
+            "GD-Link"
+        ],
+        "GD_Link_CLI.exe"
+    ],
+    "checkver": {
+        "url": "https://www.gd32mcu.com/cn/download",
+        "regex": "GD-Link_Programmer_v([\\d.]+)\\.7z"
+    },
+    "autoupdate": {
+        "url": "https://www.gd32mcu.com/data/documents/toolSoftware/GD-Link_Programmer_v$version.7z#/dl.7z",
+        "extract_dir": "GD-Link_Programmer_v$version"
+    },
+    "persist": ["config"]
+}
