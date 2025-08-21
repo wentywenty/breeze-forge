@@ -1,7 +1,7 @@
 {
     "version": "10.0.0-1",
     "description": "Simple, small, C++ XML parser that can be easily integrated into other programs (mingw-w64)",
-    "homepage": "http://www.grinninglizard.com/tinyxml2/index.html",
+    "homepage": "https://github.com/leethomason/tinyxml2",
     "license": "Zlib",
     "url": [
         "https://mirror.msys2.org/mingw/sources/mingw-w64-tinyxml2-10.0.0-1.src.tar.zst",
