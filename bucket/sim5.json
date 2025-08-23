@@ -43,6 +43,9 @@
         "Remove-Item (Join-Path $desktop 'WorldModel.lnk') -ErrorAction SilentlyContinue",
         "Write-Host 'Desktop shortcuts removed.'"
     ],
+    "depends": [
+        "vcredist"
+    ],
     "notes": [
         "This package creates a directory junction from 'C:\\Strategy' to the installation directory.",
         "Desktop shortcuts for SimuroSot5 and WorldModel have been created."
