@@ -1,49 +1,50 @@
 {
-  "version": "25.1.18",
-  "description": "SimuroSot5",
-  "homepage": "https://github.com/wentywenty/SIM5",
-  "license": {
-    "identifier": "Custom-License",
-    "url": "https://www.neu.edu.cn/"
-  },
-  "pre_install": "./script/pre_install.ps1",
-  "url": "file:///D:/github/SIM5/SIM5.zip",
-  "hash": "SHA256:1aae50f1ccb741f2f10d60755be77ae70883b8a6b086d3b4ada9383908e54ef0",
-  "psmodule": {
-    "name": "script"
-  },
-  "shortcuts": [
-    [
-      "C:/Strategy/SimuroSot5.exe",
-      "SimuroSot5"
+    "version": "25.1.18",
+    "description": "SimuroSot5",
+    "homepage": "https://github.com/zerowind18",
+    "license": "BSD-2-Clause",
+    "url": "https://raw.githubusercontent.com/wentywenty/SimuroSot5/main/SimuroSot5.zip",
+    "hash": "SHA256:cd90a53ac6137971df502fcba1fbc923b2887364da270c88212dfc6a88929f79",
+    "persist": [
+        "Strategy4Blue.dll",
+        "Strategy4Yellow.dll"
     ],
-    [
-      "C:/Strategy/WorldModel.exe",
-      "WorldModel"
+    "post_install": [
+        "Write-Host 'Creating junction from C:\\Strategy to app directory...'",
+        "if (Test-Path 'C:\\Strategy' -PathType Container) {",
+        "    Write-Host 'C:\\Strategy directory already exists. Removing it before creating junction.'",
+        "    Remove-Item 'C:\\Strategy' -Recurse -Force",
+        "}",
+        "New-Item -ItemType Junction -Path 'C:\\Strategy' -Target $dir | Out-Null",
+        "Write-Host 'Junction created successfully.'",
+        "",
+        "Write-Host 'Creating desktop shortcuts...'",
+        "$desktop = [System.Environment]::GetFolderPath('Desktop')",
+        "$wshell = New-Object -ComObject WScript.Shell",
+        "$shortcut = $wshell.CreateShortcut((Join-Path $desktop 'SimuroSot5.lnk'))",
+        "$shortcut.TargetPath = 'C:\\Strategy\\SimuroSot5.exe'",
+        "$shortcut.Save()",
+        "$shortcut = $wshell.CreateShortcut((Join-Path $desktop 'WorldModel.lnk'))",
+        "$shortcut.TargetPath = 'C:\\Strategy\\WorldModel.exe'",
+        "$shortcut.Save()",
+        "Write-Host 'Desktop shortcuts created.'"
     ],
-    [
-      "C:/Strategy/SimuroSot5.exe",
-      "SimuroSot5",
-      "Desktop"
+    "pre_uninstall": [
+        "Write-Host 'Removing C:\\Strategy junction...'",
+        "$junction = Get-Item 'C:\\Strategy' -ErrorAction SilentlyContinue",
+        "if ($junction -and $junction.LinkType -eq 'Junction') {",
+        "    Remove-Item 'C:\\Strategy' -Force",
+        "    Write-Host 'Junction removed.'",
+        "}",
+        "",
+        "Write-Host 'Removing desktop shortcuts...'",
+        "$desktop = [System.Environment]::GetFolderPath('Desktop')",
+        "Remove-Item (Join-Path $desktop 'SimuroSot5.lnk') -ErrorAction SilentlyContinue",
+        "Remove-Item (Join-Path $desktop 'WorldModel.lnk') -ErrorAction SilentlyContinue",
+        "Write-Host 'Desktop shortcuts removed.'"
+    ],
+    "notes": [
+        "This package creates a directory junction from 'C:\\Strategy' to the installation directory.",
+        "Desktop shortcuts for SimuroSot5 and WorldModel have been created."
     ]
-  ],
-  "depends": [
-    "python",
-    "git"
-  ],
-  "installer": {
-    "script": [
-      "powershell -ExecutionPolicy Bypass -File ./script/install.ps1"
-    ]
-  },
-  "uninstaller": {
-    "script": [
-      "powershell -ExecutionPolicy Bypass -File ./script/uninstall.ps1"
-    ]
-  },
-  "persist": [
-    "Strategy/Strategy4Blue.dll",
-    "Strategy/Strategy4Yellow.dll"
-  ],
-  "notes": "This is a custom package"
 }
