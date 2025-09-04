@@ -1,0 +1,56 @@
+{
+    "version": "2.10.0",
+    "description": "A set of command-line tools for building and managing CMSIS projects, including creating, building, and managing software packs.",
+    "homepage": "https://github.com/Open-CMSIS-Pack/cmsis-toolbox",
+    "license": {
+        "identifier": "Apache-2.0",
+        "url": "https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/LICENSE"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases/download/2.10.0/cmsis-toolbox-windows-amd64.zip",
+            "hash": "sha256:a3a24dbe2726ec24d1e76aa76a5d9906d18f7415fa8690d97f7addad934abc1c",
+            "extract_dir": "cmsis-toolbox-windows-amd64"
+        },
+        "arm64": {
+            "url": "https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases/download/2.10.0/cmsis-toolbox-windows-arm64.zip",
+            "hash": "sha256:1df819424f21f15a201309115160133465158671510411330881116111111111",
+            "extract_dir": "cmsis-toolbox-windows-arm64"
+        }
+    },
+    "bin": [
+        "bin\\cbridge.exe",
+        "bin\\cbuild.exe",
+        "bin\\cbuild2cmake.exe",
+        "bin\\cbuildgen.exe",
+        "bin\\cpackget.exe",
+        "bin\\csolution.exe",
+        "bin\\launch-MCUXpressoConfigTools.bat",
+        "bin\\packchk.exe",
+        "bin\\svdconv.exe",
+        "bin\\vidx2pidx.exe"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases/download/$version/cmsis-toolbox-windows-amd64.zip",
+                "extract_dir": "cmsis-toolbox-windows-amd64"
+            },
+            "arm64": {
+                "url": "https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases/download/$version/cmsis-toolbox-windows-arm64.zip",
+                "extract_dir": "cmsis-toolbox-windows-arm64"
+            }
+        }
+    },
+    "notes": [
+        "CMSIS-Toolbox has been installed. All tools are now available in your PATH.",
+        "",
+        "IMPORTANT: To build projects, you must set an environment variable for your compiler toolchain.",
+        "The format is: <NAME>_TOOLCHAIN_<MAJOR>_<MINOR>_<PATCH>=<Path to compiler binaries>",
+        "For example: setx GCC_TOOLCHAIN_11_2_1 \"C:\\path\\to\\gcc-arm-none-eabi\\bin\"",
+        "",
+        "To get started with software packs, initialize cpackget with the Keil index:",
+        "cpackget init https://www.keil.com/pack/index.pidx"
+    ]
+}
