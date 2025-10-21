@@ -1,0 +1,14 @@
+{
+    "version": "1.7.2-1",
+    "description": "Device Tree Compiler (dtc) toolchain for working with device tree source and binary files",
+    "homepage": "https://www.devicetree.org/",
+    "license": "GPL-2.0-only",
+    "url": "https://mirror.msys2.org/msys/x86_64/dtc-1.7.2-1-x86_64.pkg.tar.zst",
+    "hash": "sha256:8d75950a950deb4a1e561461d2f8e3a2ca38701cc36fa34f3a05c5ecf9eb63d5",
+    "bin": [
+        "usr/bin/dtc.exe",
+        "usr/bin/fdtdump.exe",
+        "usr/bin/fdtget.exe",
+        "usr/bin/fdtput.exe"
+    ]
+}
