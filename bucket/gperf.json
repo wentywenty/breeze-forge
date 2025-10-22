@@ -13,5 +13,19 @@
             "hash": "sha256:bc2ba169cf12604faf2551dc5a2e79298401c295cab6a1c29714d20bb9ddc0e9"
         }
     },
-    "bin": "gperf.exe"
+    "bin": "gperf.exe",
+    "checkver": {
+        "url": "https://github.com/carlescufi/chocolatey-packages/tree/master/packages/gperf/tools",
+        "regex": "gperf-([\\d.]+)\\.tar\\.gz"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://raw.githubusercontent.com/carlescufi/chocolatey-packages/master/packages/gperf/tools/gperf-$version-win64_x64.zip"
+            },
+            "32bit": {
+                "url": "https://raw.githubusercontent.com/carlescufi/chocolatey-packages/master/packages/gperf/tools/gperf-$version-win32_x32.zip"
+            }
+        }
+    }
 }
